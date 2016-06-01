@@ -5,15 +5,19 @@
   </li>
   <li><%=@restaurant.adress%></li>
   <li><%=@restaurant.phone_number%>
-</li>
+  </li>
   <li><%=@restaurant.category%>
-</li>
+  </li>
 
 </ul>
-
-<% @restaurant.reviews.each do |review| %>
-  <%=review.content%>
-  <%= review.rating %>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li>
+    <%=review.content%>
+    <h4> <strong><%= review.rating %></strong>
+    </h4>
+  </li>
+</ul>
 <% end %>
 
 <%= link_to "back to restaurants", restaurants_path %>
