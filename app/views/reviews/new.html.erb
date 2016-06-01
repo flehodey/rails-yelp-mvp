@@ -1,0 +1,13 @@
+Write your review about the restaurant
+
+<%= form_for @review, url: { action: "create"} do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+
+
+
+  <%= f.submit %>
+<% end %>

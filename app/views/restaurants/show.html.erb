@@ -1,0 +1,23 @@
+<h2>You can find more details about this restaurant</h2>
+<ul>
+  <li>
+    <%=@restaurant.name%>
+  </li>
+  <li><%=@restaurant.adress%></li>
+  <li><%=@restaurant.phone_number%>
+</li>
+  <li><%=@restaurant.category%>
+</li>
+
+</ul>
+
+<% @restaurant.reviews.each do |review| %>
+  <%=review.content%>
+  <%= review.rating %>
+<% end %>
+
+<%= link_to "back to restaurants", restaurants_path %>
+<%= link_to "Delete this restaurant", restaurant_path(@restaurant), method: :delete %>
+<%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %>
+
+<%= link_to "Write a review of this restaurant", new_restaurant_review_path(@restaurant) %>
